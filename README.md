@@ -1,6 +1,6 @@
 # Triangle PTR
 
-Author: Rylee Lyman
+Author: Rylee Alanza Lyman
 
 PTR variable slope triangle wave oscillator
 

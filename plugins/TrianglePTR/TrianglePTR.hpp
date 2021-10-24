@@ -1,5 +1,5 @@
 // PluginTrianglePTR.hpp
-// Rylee Lyman (ryleealanza@gmail.com)
+// Rylee Alanza Lyman (ryleealanza@gmail.com)
 
 #pragma once
 
@@ -15,10 +15,15 @@ public:
     // ~TrianglePTR();
 
 private:
-    // Calc function
-    void next(int nSamples);
+    // Calc functions
+    void next_aa(int nSamples);
+    void next_ak(int nSamples);
+    void next_ka(int nSamples);
+    void next_kk(int nSamples);
 
     // Member variables
+    double mPhase;
+    double mSync;
 };
 
 } // namespace TrianglePTR
