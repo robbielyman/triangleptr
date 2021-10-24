@@ -1,7 +1,7 @@
 class:: TrianglePTR
 summary:: PTR variable slope triangle wave oscillator
-related:: TODO
-categories:: UGens>TODO
+related:: Classes/Saw
+categories:: UGens
 
 description::
 
@@ -12,15 +12,15 @@ classmethods::
 
 method::ar, kr
 
-argument::TODO
+argument::freq, phase, sync, width
 
-argument::TODO
+argument::freq, phase, sync, width
 
 
 examples::
 
 code::
 
-{ TrianglePTR.ar(/* TODO */) }.play
+{ TrianglePTR.ar(freq:440.0) }.play
 
 ::

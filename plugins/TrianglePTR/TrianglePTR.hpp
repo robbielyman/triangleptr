@@ -16,14 +16,30 @@ public:
 
 private:
     // Calc functions
-    void next_aa(int nSamples);
-    void next_ak(int nSamples);
-    void next_ka(int nSamples);
-    void next_kk(int nSamples);
+    void next_aaaa(int nSamples);
+    void next_aaak(int nSamples);
+    void next_aaka(int nSamples);
+    void next_aakk(int nSamples);
+    void next_akaa(int nSamples);
+    void next_akak(int nSamples);
+    void next_akka(int nSamples);
+    void next_akkk(int nSamples);
+    void next_kaaa(int nSamples);
+    void next_kaak(int nSamples);
+    void next_kaka(int nSamples);
+    void next_kakk(int nSamples);
+    void next_kkaa(int nSamples);
+    void next_kkak(int nSamples);
+    void next_kkka(int nSamples);
+    void next_kkkk(int nSamples);
+    double algorithm(double p, double t0, double t2, double t3,
+            double w, double a, double b, double c,
+            double dc, double p1, double p2, double p3);
 
     // Member variables
-    double mPhase;
-    double mSync;
+    double mPhase   = 0;
+    double mPhaseIn = 0;
+    double mSync    = 0;
 };
 
 } // namespace TrianglePTR
