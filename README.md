@@ -4,6 +4,14 @@ Author: Rylee Alanza Lyman
 
 PTR variable slope triangle wave oscillator
 
+### Usage
+
+```supercollider
+{ TrianglePTR.ar(freq:440)[0].dup }.play
+```
+
+Note the `[0]`: TrianglePTR has two channels of output, the second being designed to feed into the `sync` input of another TrianglePTR oscillator.
+
 ### Requirements
 
 - CMake >= 3.5
