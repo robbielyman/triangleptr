@@ -21,6 +21,6 @@ examples::
 
 code::
 
-{ TrianglePTR.ar(freq:440.0) }.play
+{ TrianglePTR.ar(freq:440.0)[0] }.play
 
 ::
