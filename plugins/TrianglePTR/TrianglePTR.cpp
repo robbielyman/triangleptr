@@ -61,20 +61,20 @@ inline double TrianglePTR::algorithm(double p, double t0, double t2, double t3,
             double dc, double p1, double p2, double p3) {
    if (p < w) {
        if (p < t0) {
-           // y = B*x - B*DC - 1 - P3*x^4
-           return b*p - b*dc - 1.f - p3 * p * p * p * p;
+           // y = B*x - B*DC - 1 - 0.5*P3*x^4
+           return b*p - b*dc - 1.f - 0.5f * p3 * p * p * p * p;
        }
        else if (p < t2) {
-           // y = B*x - B*DC - 1 + 2*P3*x^4 - P2*x^3 + 1.5*P1*x^2 - C*x + 0.25*C*T0
-           return b*p - b*dc - 1.f + 2.f * p3 * p * p * p * p
-               - p2 * p * p * p + 1.5f * p1 * p * p - c * p
-               + 0.25f * c * t0;
+           // y = B*x - B*DC - 1 + P3*x^4 - 0.5*P2*x^3 + 0.75*P1*x^2 - 0.5*C*x + 0.125*C*T0
+           return b*p - b*dc - 1.f + p3 * p * p * p * p
+               - 0.5f * p2 * p * p * p + 0.75f * p1 * p * p - 0.5 * c * p
+               + 0.125f * c * t0;
        }
        else if (p < t3) {
-           // y = B*x - B*DC - 1 - P3*x^4 + P2*x^3 - 4.5*P1*x^2 + 7*C*x - 3.75*C*T0
-           return b*p - b*dc - 1.f - p3 * p * p * p * p
-               + p2 * p * p * p - 4.5f * p1 * p * p
-               + 7.f * c * p - 3.75f * c * t0;
+           // y = B*x - B*DC - 1 - 0.5*P3*x^4 + 0.5*P2*x^3 - 2.25*P1*x^2 + 3.5*C*x - 1.875*C*T0
+           return b*p - b*dc - 1.f - 0.5f * p3 * p * p * p * p
+               + 0.5f * p2 * p * p * p - 2.25f * p1 * p * p
+               + 3.5f * c * p - 1.875f * c * t0;
        }
        else {
            // y = A*x - A*DC - 1
@@ -84,20 +84,20 @@ inline double TrianglePTR::algorithm(double p, double t0, double t2, double t3,
    else {
        double pw = p - w;
        if (pw < t0) {
-           // y = A*x - A*DC + 1 + P3*x^4 
-           return a*pw - a*dc + 1.f + p3 * pw * pw *pw *pw;
+           // y = A*x - A*DC + 1 + 0.5*P3*x^4 
+           return a*pw - a*dc + 1.f + 0.5f * p3 * pw * pw *pw *pw;
        }
        else if (pw < t2) {
-           // y = A*x - A*DC + 1 - 2*P3*x^4 + P2*x^3 - 1.5*P1*x^2 + C*x - 0.25*C*T0
-           return a*pw - a*dc + 1.f - 2.f * p3 * pw * pw *pw *pw
-               + p2 * pw * pw * pw - 1.5f * p1 * pw * pw + c * pw
-               - 0.25f * c * t0;
+           // y = A*x - A*DC + 1 - P3*x^4 + 0.5*P2*x^3 - 0.75*P1*x^2 + 0.5*C*x - 0.125*C*T0
+           return a*pw - a*dc + 1.f - p3 * pw * pw *pw *pw
+               + 0.5f * p2 * pw * pw * pw - 0.75f * p1 * pw * pw + 0.5 * c * pw
+               - 0.125f * c * t0;
        }
        else if (pw < t3) {
-           // y = A*x - A*DC + 1 + P3*x^4 - P2*x^3 + 4.5*P1*x^2 - 7*c*x + 3.75*C*T0
-           return a*pw - a*dc + 1.f + p3 * pw * pw * pw *pw
-               - p2 * pw * pw *pw + 4.5f * p1 * pw * pw 
-               - 7.f * c * pw + 3.75f * c * t0;
+           // y = A*x - A*DC + 1 + 0.5*P3*x^4 - P2*x^3 + 4.5*P1*x^2 - 7*c*x + 3.75*C*T0
+           return a*pw - a*dc + 1.f + 0.5f * p3 * pw * pw * pw *pw
+               - 0.5f * p2 * pw * pw *pw + 2.25f * p1 * pw * pw 
+               - 3.5f * c * pw + 1.875f * c * t0;
        }
        else {
            // y = B*x - B*DC + 1
